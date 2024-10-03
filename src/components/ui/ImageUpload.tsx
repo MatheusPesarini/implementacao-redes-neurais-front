@@ -18,6 +18,10 @@ export default function ImageUpload() {
       alert('Por favor, selecione uma imagem para ser verificada!');
       return
     }
+    if(images[0].type != 'image/jpeg' && images[0].type != 'image/png'){
+      alert('Por favor, selecione uma imagem no formato .jpg ou .png');
+      return
+    }
 
     const formData = new FormData();
     formData.append('file', images[0]);
